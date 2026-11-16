@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="test.css">
+
     <!-- Bootstrap v6 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
     <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
@@ -23,7 +25,7 @@
     <!-- Card 2 -->
      <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <img src="..." class="card-img" alt="...">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR0Hl3q4dN8Ze544M2r95DaOwTwTSoQQCMPoYvUBwE0D9pj04q7-OKIvAl&s=10" class="card-img" alt="...">
             <h5 class="mt-2 mb-0">Image within the body</h5>
             <p class="card-text fg-2">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
             <small class="fg-3">Last updated 3 mins ago</small>
@@ -89,5 +91,53 @@
             <small class="fg-3">Last updated 3 mins ago</small>
         </div>
     </div>
+
+
+
+<h2>Collapsibles</h2>
+
+<p>Click on the cat to learn more!</p>
+
+
+<button type="button" id="catImage">
+    <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR0Hl3q4dN8Ze544M2r95DaOwTwTSoQQCMPoYvUBwE0D9pj04q7-OKIvAl&s=10"
+        class="card-img"
+        alt="Cat">
+</button>
+
+
+<div id="catInfo" class="card" style="width: 18rem; display: none;">
+
+    <div class="card-body">
+
+        <h5 class="card-title">Fun Facts About Cats</h5>
+
+        <ul>
+            <li>Affectionate and People-Oriented</li>
+            <li>Cats sleep between 12 to 16 hours a day.</li>
+            <li>Every cat has a unique nose print pattern.</li>
+        </ul>
+
+         <img
+            src="https://i.pinimg.com/736x/78/65/2b/78652bf842492ba04cb1acdc3b97de5d.jpg"
+            class="cat-picture"
+            id="catPhoto"
+            alt="Cat">
+
+        <button type="button" id="backButton" class="btn btn-primary">
+            Back to Cat
+        </button>
+
+    </div>
+</div>
+
+
+
+
+
+ <!--test.js connecte --->
+    <script src="test.js"></script>
+
 </body>
 </html>
