@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,nitial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Dev/Mission | Our Story</title>
 
@@ -17,10 +17,54 @@
 </head>
 
 <body>
-    <main class="intro-page">
-        <div class="curtain curtain-left" aria-hidden="true"></div>
-        <div class="curtain curtain-right" aria-hidden="true"></div>
-        <div class="container position-relative py-5">
+  <!-- Top-right menu -->
+<div class="dropdown position-absolute top-0 end-0 p-3">
+
+  <button
+    class="btn fs-2 border-0"
+    style="color: inherit;"
+    type="button"
+    id="menuButton"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Open navigation menu"
+  >
+    <span aria-hidden="true">☰</span>
+  </button>
+
+  <ul
+    class="dropdown-menu dropdown-menu-end"
+    aria-labelledby="menuButton"
+  >
+    <li>
+      <a class="dropdown-item" href="#">
+        Introduction
+      </a>
+    </li>
+
+    <li>
+      <button
+        class="dropdown-item"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#missionStory"
+        aria-expanded="false"
+        aria-controls="missionStory"
+      >
+        Show / hide our story
+      </button>
+    </li>
+  </ul>
+
+</div>
+
+  <main class="intro-page">
+
+    <!-- Decorative stage curtains -->
+    <div class="curtain curtain-left" aria-hidden="true"></div>
+    <div class="curtain curtain-right" aria-hidden="true"></div>
+
+    <div class="container position-relative py-5">
 
       <!-- Opening introduction -->
       <section class="text-center intro-heading">
