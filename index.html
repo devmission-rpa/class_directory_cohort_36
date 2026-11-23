@@ -13,16 +13,18 @@
   >
 
   <!-- My CSS -->
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!-- Top-right menu -->
-<div class="dropdown position-absolute top-0 end-0 p-3">
+<div class="dropdown position-absolute top-0 end-0 p-3 story-menu">
 
   <button
     class="btn fs-2 border-0"
-    style="color: inherit;"
+    style="color: white;"
     type="button"
     id="menuButton"
     data-bs-toggle="dropdown"
@@ -35,7 +37,8 @@
   <ul
     class="dropdown-menu dropdown-menu-end"
     aria-labelledby="menuButton"
-  >
+    >
+    
     <li>
       <a class="dropdown-item" href="#">
         Introduction
@@ -55,10 +58,8 @@
       </button>
     </li>
   </ul>
-
 </div>
-
-  <main class="intro-page">
+ <main class="intro-page">
 
     <!-- Decorative stage curtains -->
     <div class="curtain curtain-left" aria-hidden="true"></div>
@@ -71,7 +72,7 @@
         <p class="small-title">DEV/MISSION PRESENTS</p>
 
         <h1 class="display-4">
-          Every Story Begins with a Spark
+          Every Story Begins with a <span class="spark-word">Spark</span>
         </h1>
 
         <p class="intro-description mt-3">
@@ -94,7 +95,15 @@
 
       <!-- Story Open: appears when the button is clicked -->
       <div class="collapse" id="missionStory">
-        <section class="row justify-content-center mt-5">
+        <div class="spark-trail" aria-hidden="true">
+  <span style="--delay: 0ms"></span>
+  <span style="--delay: 80ms"></span>
+  <span style="--delay: 160ms"></span>
+  <span style="--delay: 240ms"></span>
+  <span style="--delay: 320ms"></span>
+  <span style="--delay: 400ms"></span>
+        </div>
+        <section class="row justify-content-center">
           <div class="col-12 col-lg-9">
 
             <div class="story-box p-4 p-md-5">
