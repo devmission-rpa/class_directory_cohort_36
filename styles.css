@@ -1,0 +1,21 @@
+.intro-page {
+    min-height: 100vh;
+    color: #fff4e3
+    background: radial-gradient(
+        ellipse at top,
+        #a7632e 0% 
+        #140e16 30%
+        #140e16 65%
+    );
+}
+
+.intro-page .story-button {
+    background-color: #66263e;
+    color: #fff4e3;
+
+}
+
+.intro-page .story-box{
+    background-color: #f5e6c8;
+    color: #332027;
+}
