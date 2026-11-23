@@ -1,0 +1,14 @@
+/* header */
+h1 {
+    margin: 3rem;
+}
+
+/* gallery */
+.galleryImg {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+#galleryRow {
+    max-width: 1440px;
+}
