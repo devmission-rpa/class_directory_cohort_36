@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,11 +16,13 @@
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/gallery.css" rel="stylesheet" />
   </head>
+
   <body>
-    <!-- navigation side menu -->
+
+    <!-- Navigation -->
     <nav class="navbar fixed-top" data-bs-theme="dark" style="padding: 0">
-      <!-- menu button -->
       <div class="container-fluid" id="menuBar" style="padding-top: 0">
+
         <button
           class="navbar-toggler ms-auto"
           type="button"
@@ -32,7 +35,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- menu -->
         <div
           class="offcanvas offcanvas-end"
           tabindex="-1"
@@ -41,6 +43,7 @@
         >
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="navbarDrawerLabel">Pages</h5>
+
             <button
               type="button"
               class="btn-close"
@@ -52,87 +55,178 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >Story</a
-                >
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >Directory</a
-                >
-                <a class="nav-link" aria-current="page" href="gallery.html"
-                  >Gallery</a
-                >
+                <a class="nav-link" href="index.html">Story</a>
+                <a class="nav-link" href="index.html">Directory</a>
+                <a class="nav-link active" href="gallery.html">Gallery</a>
               </li>
             </ul>
           </div>
         </div>
+
       </div>
     </nav>
 
-    <!-- header -->
-    <h1 class="text-center">Gallery</h1>
+    <!-- Gallery Header -->
+    <header class="gallery-header text-center">
+      <p class="gallery-subtitle">DEV/MISSION ARCHIVES</p>
+      <h1>Through the Lens</h1>
+      <p class="gallery-intro">
+        A collection of moments, memories, collaborations,
+        and creations from our journey.
+      </p>
+    </header>
 
-    <!-- images -->
-    <main class="container-fluid px-0">
-      <div
-        class="center row row-cols-3 row-cols-lg-4 g-2 g-md-2 g-lg-4"
-        id="galleryRow"
-      >
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-        <img
-          class="galleryImg"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
-        />
-      </div>
+
+    <main class="container gallery-container">
+
+      <!-- SECTION 1: OFF-SITE -->
+      <section class="gallery-section">
+
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div>
+            <h2>Beyond the Classroom</h2>
+            <p>Field trips, special events, and experiences offsite.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 gallery-grid">
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Off-site activity photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Off-site activity photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Off-site activity photo">
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECTION 2: CLASSROOM ^^ -->
+      <section class="gallery-section">
+
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <div>
+            <h2>Inside the Classroom</h2>
+            <p>Everyday moments, lessons, and learning experiences.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 gallery-grid">
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Classroom photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Classroom photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Classroom photo">
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECTION 3: COLLABORATION -->
+      <section class="gallery-section">
+
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <div>
+            <h2>In Collaboration</h2>
+            <p>Teamwork, shared ideas, and learning together.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 gallery-grid">
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Collaborative group photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Collaborative group photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Collaborative group photo">
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECTION 4: PROJECTS -->
+      <section class="gallery-section">
+
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <div>
+            <h2>Projects & Creations</h2>
+            <p>Ideas brought to life through creativity and innovation.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 gallery-grid">
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Student project photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Student project photo">
+          </div>
+
+          <div class="col-6 col-md-4">
+            <img class="galleryImg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZz88aISXBi25wJt6sqMIn-zhRBCzn8vfOH3YYcmK9Q&s=10"
+              alt="Student project photo">
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
-    <!-- Bootstrap -->
+    <!-- Footer -->
+    <footer class="gallery-footer text-center">
+      <p>DEV/MISSION &mdash; CAPTURING THE JOURNEY</p>
+    </footer>
+
+    <!-- Bootstrap >< -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
