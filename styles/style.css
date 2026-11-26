@@ -1,0 +1,33 @@
+/* shared styling accross pages */
+
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap");
+
+/* CSS Variables */
+:root {
+  /* colors*/
+  --bgColor: #140e16;
+  --highlightColor: #a7632e;
+  --accentColor: #a6262d;
+  --textColor: #fff4e3;
+  --textColor2: #ff7865;
+}
+
+/* nav bar */
+#menuBar {
+  background: linear-gradient(rgba(167, 99, 46, 1), rgba(167, 99, 46, .3), rgba(167, 99, 46, 0));
+}
+
+#menuButton {
+  border: none;
+  padding: 0.25rem;
+  margin: 1rem;
+  font-size: 1.75rem;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  text-align: center;
+}
