@@ -22,7 +22,7 @@ async function getdata() {
   })
 
   // Fetching images
-  let pictureFrames = document.getElementsByClassName("photo");
+  let pictureFrames = document.getElementsByClassName("student");
   let imageCounter = 0;
 
   data.records.forEach((rec) => {
@@ -49,9 +49,6 @@ async function getStaffData() {
   // Fetching images
   let pictureFrames = document.getElementsByClassName("staff");
   let counter = 0;
-  console.log("Testing");
-  console.log(pictureFrames);
-  console.log(data.records)
 
   data.records.forEach((rec) => {
     pictureFrames[counter].children[0].children[0].src = `${rec.fields.professionalHeadshot[0].url}`;
@@ -87,10 +84,40 @@ let directoryProfileCard = `
 
 
 // ----- overlay interaction -----
-const overlay = document.getElementById("profileOverlay");
 // get information from airtable -- PLACEHOLDERS !!!!!!!!!!!!!!!!!!!!
-function showOverlay(id) {
+async function showOverlay(id) {
   //placeholder data
+  console.log(id);
+
+  // if (id.search("student") != -1) {
+  //   const response = await fetch(
+  //     "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Cohort%20Responses",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization:
+  //           "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+  //       },
+  //     },
+  //   );
+  // } else if (id.search("staff") != -1) {
+  //   const response = await fetch(
+  //     "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+  //       },
+  //     },
+  //   );
+  // } else {
+  //   return;
+  // }
+
+  // const data = await response.json();
+  // let index = (parseInt(id));
+  // console.log(index);
+
   let info = {
     name: "NAME",
     headline: "ASPIRING WEB DEVELOPER",
@@ -119,9 +146,13 @@ function showOverlay(id) {
     `<a href="${info.github}" target="_blank" rel="noopener">Github</a>`;
 
   // show overlay
+  let overlay = document.getElementById("profileOverlay");
   overlay.style.display = "flex";
 }
 
 function hideOverlay() {
+  let overlay = document.getElementById("profileOverlay");
   overlay.style.display = "none";
 }
+
+
