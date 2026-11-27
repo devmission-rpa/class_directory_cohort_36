@@ -1,5 +1,35 @@
+async function getdata() {
+  const response = await fetch(
+    "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Cohort%20Responses",
+    {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+      },
+    },
+  );
+
+  const data = await response.json();
+  // console.log(data);
+  //from main table
+  // const box = document.getElementById("author");
+  const firstname = document.getElementById("bName");
+  firstname.textContent = data.records[1].fields.FullName;
+
+
+  console.log("Hello");
+  
+}
+
+getdata();
+
+
+
 // ----- directory cards -----
 // append to #studentsGrid or #staffGrid in directory.html
+
+
 let directoryProfileCard = `
     <a href="#studentNumber${index}" class="profile-card" onclick="showOverlay('student-1'); return false;">
         <div class="photo">
