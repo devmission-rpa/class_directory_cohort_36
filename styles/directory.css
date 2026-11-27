@@ -301,7 +301,7 @@ footer span {
   background: #302824;
 }
 
-#overlayPhoto {
+.overlayPhoto {
   display: block;
   width: 100%;
   height: 100%;

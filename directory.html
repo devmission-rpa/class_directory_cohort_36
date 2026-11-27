@@ -229,7 +229,7 @@
         </div>
 
         <div class="profile-grid">
-          <a href="#staff-1" class="profile-card" onclick="showOverlay('staff-1'); return false;">
+          <a href="#staff-1" class="profile-card" onclick="showStaffOverlay('staff-1'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -248,7 +248,7 @@
             <p>STAFF NO. 01</p>
           </a>
 
-          <a href="#staff-2" class="profile-card" onclick="showOverlay('staff-2'); return false;">
+          <a href="#staff-2" class="profile-card" onclick="showStaffOverlay('staff-2'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -267,7 +267,7 @@
             <p>STAFF NO. 02</p>
           </a>
 
-          <a href="#staff-3" class="profile-card" onclick="showOverlay('staff-3'); return false;">
+          <a href="#staff-3" class="profile-card" onclick="showStaffOverlay('staff-3'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -286,7 +286,7 @@
             <p>STAFF NO. 03</p>
           </a>
 
-          <a href="#staff-4" class="profile-card" onclick="showOverlay('staff-4'); return false;">
+          <a href="#staff-4" class="profile-card" onclick="showStaffOverlay('staff-4'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -305,7 +305,7 @@
             <p>STAFF NO. 04</p>
           </a>
 
-          <a href="#staff-5" class="profile-card" onclick="showOverlay('staff-5'); return false;">
+          <a href="#staff-5" class="profile-card" onclick="showStaffOverlay('staff-5'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -324,7 +324,7 @@
             <p>STAFF NO. 05</p>
           </a>
 
-          <a href="#staff-6" class="profile-card" onclick="showOverlay('staff-6'); return false;">
+          <a href="#staff-6" class="profile-card" onclick="showStaffOverlay('staff-6'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -343,7 +343,7 @@
             <p>STAFF NO. 06</p>
           </a>
 
-          <a href="#staff-7" class="profile-card" onclick="showOverlay('staff-7'); return false;">
+          <a href="#staff-7" class="profile-card" onclick="showStaffOverlay('staff-7'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -362,7 +362,7 @@
             <p>STAFF NO. 07</p>
           </a>
 
-          <a href="#staff-8" class="profile-card" onclick="showOverlay('staff-8'); return false;">
+          <a href="#staff-8" class="profile-card" onclick="showStaffOverlay('staff-8'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -381,7 +381,7 @@
             <p>STAFF NO. 08</p>
           </a>
 
-          <a href="#staff-9" class="profile-card" onclick="showOverlay('staff-9'); return false;">
+          <a href="#staff-9" class="profile-card" onclick="showStaffOverlay('staff-9'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -400,7 +400,7 @@
             <p>STAFF NO. 09</p>
           </a>
 
-          <a href="#staff-10" class="profile-card" onclick="showOverlay('staff-10'); return false;">
+          <a href="#staff-10" class="profile-card" onclick="showStaffOverlay('staff-10'); return false;">
             <div class="photo staff">
               <div class="formal">
                 <img
@@ -427,7 +427,7 @@
       <span>AN EDITION OF OUR STORIES • 2026</span>
     </footer>
 
-    <!-- PROFILE OVERLAY -->
+    <!-- Student profile overlay -->
     <div
       class="profile-overlay"
       id="profileOverlay"
@@ -443,7 +443,7 @@
           "
           >×</a
         >
-        <div id="overlayPhotoContainer"><img id="overlayPhoto" alt="" /></div>
+        <div id="overlayPhotoContainer"><img class="overlayPhoto" id="studentPhoto" alt="" /></div>
         <div class="profile-details">
           <h2 id="overlayName"></h2>
           <p id="overlayHeadline"></p>
@@ -452,6 +452,34 @@
           <h3 id="overlayPortfolio">Portfolio</h3>
           <h3 id="overlayLinkedin">LinkedIn</h3>
           <h3 id="overlayGithub">GitHub</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Staff profile overlay -->
+    <div
+      class="profile-overlay"
+      id="staffOverlay"
+      onclick="if (event.target === this) hideOverlay();"
+    >
+      <div class="profile-window">
+        <a
+          href="#"
+          class="close"
+          onclick="
+            hideStaffOverlay();
+            return false;
+          "
+          >×</a
+        >
+        <div id="overlayPhotoContainer"><img class="overlayPhoto" id="staffPhoto" alt="" /></div>
+        <div class="profile-details">
+          <h2 id="staffName"></h2>
+          <p id="staffHeadline"></p>
+          <hr />
+          <p id="staffSummary"></p>
+          <br>
+          <p id="staffMovie">Portfolio</h3>
         </div>
       </div>
     </div>

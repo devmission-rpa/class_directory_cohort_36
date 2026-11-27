@@ -70,31 +70,7 @@ getdata();
 getStaffData();
 
 
-
-// ----- directory cards -----
-// append to #studentsGrid or #staffGrid in directory.html
-
-
-let directoryProfileCard = `
-    <a href="#studentNumber${index}" class="profile-card" onclick="showOverlay('student-1'); return false;">
-        <div class="photo">
-            <div class="formal">
-                <img class="portrait-img" src="${imageUrlFormal}" alt="${studentName} formal portrait">
-            </div>
-            <div class="casual">
-                <img class="portrait-img" src="${imageUrlCasual}" alt="${studentName} casual image">
-            </div>
-        </div>
-        <h3>Britney</h3>
-        <p>STUDENT NO. 01</p>
-    </a>
-`;
-
-
-// ----- overlay interaction -----
-// get information from airtable -- PLACEHOLDERS !!!!!!!!!!!!!!!!!!!!
 async function showOverlay(id) {
-  //placeholder data
   let response;
 
   if (id.search("student") != -1) {
@@ -105,16 +81,6 @@ async function showOverlay(id) {
         headers: {
           Authorization:
             "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
-        },
-      },
-    );
-  } else if (id.search("staff") != -1) {
-    response = await fetch(
-      "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
-      {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
         },
       },
     );
@@ -140,7 +106,7 @@ async function showOverlay(id) {
   document.getElementById("overlayName").textContent = info.name;
   document.getElementById("overlayHeadline").textContent = info.headline;
   document.getElementById("profileSummary").textContent = info.summary;
-  document.getElementById("overlayPhoto").src = info.image;
+  document.getElementById("studentPhoto").src = info.image;
 
   document.getElementById("overlayPortfolio").innerHTML =
     `<a href="${info.portfolio}" target="_blank" rel="noopener">Portfolio</a>`;
@@ -161,4 +127,48 @@ function hideOverlay() {
   overlay.style.display = "none";
 }
 
+async function showStaffOverlay(id) {
+  let response;
 
+  if (id.search("staff") != -1) {
+    response = await fetch(
+      "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+        },
+      },
+    );
+  } else {
+    return;
+  }
+
+  const data = await response.json();
+  let index = (id.match(/\d+/)[0]) - 1;
+  console.log(index);
+
+  let info = {
+    name: data.records[index].fields.fullName,
+    role: data.records[index].fields.currentRole,
+    image: data.records[index].fields.personalityHeadshot[0].url,
+    about: data.records[index].fields.about, //about me link
+    movie: data.records[index].fields.movie
+  };
+
+  // update information
+  document.getElementById("staffName").textContent = info.name;
+  document.getElementById("staffHeadline").textContent = info.role;
+  document.getElementById("staffSummary").textContent = info.about;
+  document.getElementById("staffPhoto").src = info.image;
+  document.getElementById("staffMovie").innerHTML = "Favorite movie: " + info.movie;
+
+  // show overlay
+  let overlay = document.getElementById("staffOverlay");
+  overlay.style.display = "flex";
+}
+
+function hideStaffOverlay() {
+  let overlay = document.getElementById("staffOverlay");
+  overlay.style.display = "none";
+}
