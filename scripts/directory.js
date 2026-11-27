@@ -11,11 +11,11 @@ async function getdata() {
   );
 
   const data = await response.json();
-  // console.log(data);
-  //from main table
-  // const box = document.getElementById("author");
+  //retrieve name from the columnFullName only using the getElementBYid 
   const firstname = document.getElementById("bName");
   firstname.textContent = data.records[1].fields.FullName;
+
+  //above retrieve name from the column FullName only
 
 
   console.log("Hello");
