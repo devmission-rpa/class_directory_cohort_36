@@ -11,18 +11,58 @@ async function getdata() {
   );
 
   const data = await response.json();
-  //retrieve name from the columnFullName only using the getElementBYid 
-  const firstname = document.getElementById("bName");
-  firstname.textContent = data.records[1].fields.FullName;
-
-  //above retrieve name from the column FullName only
-
-
-  console.log("Hello");
   
+  // Fetching names
+  let nameTags = document.getElementsByClassName("name");
+  let nameCounter = 0;
+
+  data.records.forEach((rec) => {
+    nameTags[nameCounter].textContent = `${rec.fields.fullName}`;
+    nameCounter++;
+  })
+
+  // Fetching images
+  let pictureFrames = document.getElementsByClassName("photo");
+  let imageCounter = 0;
+
+  data.records.forEach((rec) => {
+    pictureFrames[imageCounter].children[0].children[0].src = `${rec.fields.professionalHeadshot[0].url}`;
+    pictureFrames[imageCounter].children[1].children[0].src = `${rec.fields.personalityHeadshot[0].url}`;
+    imageCounter++;
+  })
+
+}
+
+async function getStaffData() {
+  const response = await fetch(
+    "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
+    {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+      },
+    },
+  );
+
+  const data = await response.json();
+
+  // Fetching images
+  let pictureFrames = document.getElementsByClassName("staff");
+  let counter = 0;
+  console.log("Testing");
+  console.log(pictureFrames);
+  console.log(data.records)
+
+  data.records.forEach((rec) => {
+    pictureFrames[counter].children[0].children[0].src = `${rec.fields.professionalHeadshot[0].url}`;
+    pictureFrames[counter].children[1].children[0].src = `${rec.fields.personalityHeadshot[0].url}`;
+    counter++;
+  })
+
 }
 
 getdata();
+getStaffData();
 
 
 
