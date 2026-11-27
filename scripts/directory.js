@@ -56,6 +56,14 @@ async function getStaffData() {
     counter++;
   })
 
+  // Fetching Staff Names
+  let nameTagsStaff = document.getElementsByClassName("nameStaff");
+  let nameCounter = 0;
+
+  data.records.forEach((rec) => {
+    nameTagsStaff[nameCounter].textContent = `${rec.fields.fullName}`;
+    nameCounter++;
+  });
 }
 
 getdata();
