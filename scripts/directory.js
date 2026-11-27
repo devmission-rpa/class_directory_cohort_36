@@ -87,47 +87,45 @@ let directoryProfileCard = `
 // get information from airtable -- PLACEHOLDERS !!!!!!!!!!!!!!!!!!!!
 async function showOverlay(id) {
   //placeholder data
-  console.log(id);
+  let response;
 
-  // if (id.search("student") != -1) {
-  //   const response = await fetch(
-  //     "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Cohort%20Responses",
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization:
-  //           "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
-  //       },
-  //     },
-  //   );
-  // } else if (id.search("staff") != -1) {
-  //   const response = await fetch(
-  //     "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
-  //       },
-  //     },
-  //   );
-  // } else {
-  //   return;
-  // }
+  if (id.search("student") != -1) {
+    response = await fetch(
+      "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Cohort%20Responses",
+      {
+        method: "GET",
+        headers: {
+          Authorization:
+            "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+        },
+      },
+    );
+  } else if (id.search("staff") != -1) {
+    response = await fetch(
+      "https://api.airtable.com/v0/appv4wH8WT59Z9uXb/Staff%20Responses",
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer patrZT0QjKVF36q8N.ab2a72cf952018ed360b2d4dff85bdc608f97a5736299c45464efe504c03c1ad",
+        },
+      },
+    );
+  } else {
+    return;
+  }
 
-  // const data = await response.json();
-  // let index = (parseInt(id));
-  // console.log(index);
+  const data = await response.json();
+  let index = (id.match(/\d+/)[0]) - 1;
+  console.log(index);
 
   let info = {
-    name: "NAME",
+    name: data.records[index].fields.fullName,
     headline: "ASPIRING WEB DEVELOPER",
-    summary:
-      "PLEASE ADD THE 2-3 SENTENCE SUMMARIES FROM THE GOOGLE FORM HERE PLEASE! IMPORT FROM AIRTABLE",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP90t0WvWK1s8RhWNxDCymIvO_9EWf29r_sz2B0Pq7-g&s=10",
-    portfolio: "https://google.com", //about me link
-    linkedin: "https://linkedin.com/in/",
-    github: "https://github.com/",
+    summary: data.records[index].fields.description,
+    image: data.records[index].fields.personalityHeadshot[0].url,
+    portfolio: data.records[index].fields.aboutmeLink, //about me link
+    linkedin: data.records[index].fields.linkedinLink,
+    github: data.records[index].fields.githubLink,
   };
 
   // update information
