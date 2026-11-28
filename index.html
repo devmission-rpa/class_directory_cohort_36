@@ -18,25 +18,43 @@
   </head>
 
   <body>
-    <!-- Top-right menu -->
-    <div class="dropdown position-absolute top-0 end-0 p-3 story-menu">
-      <button
-        class="btn fs-2 border-0"
-        style="color: white"
-        type="button"
-        id="menuButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        aria-label="Open navigation menu"
-      >
-        <span aria-hidden="true">☰</span>
-      </button>
+<div id="navigationToggle" class="position-fixed top-0 end-0 p-3" style="z-index: 1030;">
+  <button
+    id="menuButton"
+    class="btn fs-2 border-0 text-white"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#navigationDrawer"
+    aria-controls="navigationDrawer"
+    aria-label="Open navigation menu"
+  >
+    <span aria-hidden="true">☰</span>
+  </button>
+</div>
 
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuButton">
-        <li>
-          <a class="dropdown-item" href="#"> Introduction </a>
+<div 
+  class="offcanvas offcanvas-end" 
+  id="navigationDrawer"
+  tabindex="-1" 
+  aria-labelledby="navigationDrawerTitle"
+  >
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title fs-5" id="navigationDrawerTitle">
+      Navigation
+    </h2>
+    <button 
+    class="btn-close"
+    type="button" 
+    data-bs-dismiss="offcanvas"
+    aria-label="Close navigation menu"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+      <li>
+        <a class="dropdown-item" href="#"> Introduction </a>
         </li>
-
         <li>
           <button
             class="dropdown-item"
@@ -51,6 +69,8 @@
         </li>
       </ul>
     </div>
+  </div>
+
     <main class="intro-page">
       <!-- Decorative stage curtains -->
       <div class="curtain curtain-left" aria-hidden="true"></div>

@@ -116,3 +116,52 @@
 body:has(#missionStory.show) .story-menu {
   display: block;
 }
+
+/* Put the title and the two rows of dots on the same line */
+#missionStory .story-box h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#missionStory .story-box h2::before,
+#missionStory .story-box h2::after {
+  content: "";
+  flex: 1 0 18px;
+  max-width: 120px;
+  height: 8px;
+  background: radial-gradient(circle, #b67424 2px, transparent 2.6px)
+    left center / 12px 8px repeat-x;
+  filter: drop-shadow(0 0 3px #ffb84d);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #missionStory .story-box h2::before,
+  #missionStory .story-box h2::after {
+    animation: story-title-twinkle 1.8s ease-in-out infinite alternate;
+  }
+
+  #missionStory .story-box h2::after {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes story-title-twinkle {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+#missionStory .story-box h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #66263e;
+}
+
+#missionStory .story-box p {
+  font-family: system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #332027;
+}
