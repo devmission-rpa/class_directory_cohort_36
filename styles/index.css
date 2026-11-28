@@ -165,3 +165,31 @@ body:has(#missionStory.show) .story-menu {
   line-height: 1.7;
   color: #332027;
 }
+.about-dev-mission {
+  margin-top: 3rem;
+  padding: 0 1rem 2rem;
+  border-bottom: 3px solid #8e3d57;
+  color: #fff0cf;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.about-dev-mission h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-dev-mission h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 1rem auto;
+  background: #d9ad62;
+}
+
+.about-dev-mission p {
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
